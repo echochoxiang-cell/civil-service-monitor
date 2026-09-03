@@ -109,6 +109,27 @@ SOURCES = [
         "keywords": ["公务员", "公告", "招录", "报名", "考试"],
         "detail_limit": 6,
     },
+    {
+        "name": "上海市考",
+        "category": "省考",
+        "url": "https://rsj.sh.gov.cn/",
+        "keywords": ["公务员", "招录", "公告", "报名", "考试"],
+        "detail_limit": 6,
+    },
+    {
+        "name": "上海事业编",
+        "category": "省考",
+        "url": "https://rsj.sh.gov.cn/",
+        "keywords": ["事业单位", "事业编", "公告", "报名", "招聘"],
+        "detail_limit": 6,
+    },
+    {
+        "name": "江苏事业编",
+        "category": "省考",
+        "url": "https://jshrss.jiangsu.gov.cn/",
+        "keywords": ["事业单位", "事业编", "公告", "报名", "招聘"],
+        "detail_limit": 6,
+    },
 
     # ---------------- 各省定向选调 ----------------
     {
@@ -136,6 +157,27 @@ SOURCES = [
         "name": "浙江选调生",
         "category": "各省选调",
         "url": "https://www.zjks.com/",
+        "keywords": ["选调", "定向", "公告", "报名"],
+        "detail_limit": 6,
+    },
+    {
+        "name": "上海定向选调",
+        "category": "各省选调",
+        "url": "https://rsj.sh.gov.cn/",
+        "keywords": ["选调", "定向", "公告", "报名"],
+        "detail_limit": 6,
+    },
+    {
+        "name": "江苏定向选调",
+        "category": "各省选调",
+        "url": "https://jshrss.jiangsu.gov.cn/",
+        "keywords": ["选调", "定向", "公告", "报名"],
+        "detail_limit": 6,
+    },
+    {
+        "name": "广东定向选调",
+        "category": "各省选调",
+        "url": "http://rsks.gd.gov.cn/",
         "keywords": ["选调", "定向", "公告", "报名"],
         "detail_limit": 6,
     },
