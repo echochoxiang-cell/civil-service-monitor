@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>公考招考监控</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: "#eef6ff",
+                            100: "#d9eaff",
+                            500: "#2563eb",
+                            600: "#1d4ed8",
+                            700: "#1e40af",
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body { font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; }
+        .row-new { background-color: #fffbeb; }
+        .row-new:hover { background-color: #fef3c7; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <!-- 头部 -->
+        <header class="mb-8">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl font-bold text-slate-900">公考招考监控</h1>
+                    <p class="text-slate-500 mt-1">国考 · 省考 · 中央遴选 · 各省定向选调 每日自动抓取</p>
+                </div>
+                <div class="text-sm text-slate-500 space-y-1 text-right">
+                    <div>最近更新：<span id="lastUpdated" class="font-medium text-slate-700">--</span></div>
+                    <div>累计 <span id="totalCount" class="font-semibold text-brand-600">0</span> 条 · 新增 <span id="newCount" class="font-semibold text-amber-600">0</span> 条</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 搜索 / 过滤 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 mb-6 flex flex-col sm:flex-row gap-3 sm:items-center">
+            <input id="searchInput" type="text" placeholder="搜索公告标题、来源…"
+                class="flex-1 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500" />
+            <label class="flex items-center gap-2 text-sm text-slate-600">
+                <input id="onlyNew" type="checkbox" class="w-4 h-4 accent-amber-500" />
+                只看新公告
+            </label>
+            <button id="reloadBtn" class="text-sm px-4 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-700 transition">刷新数据</button>
+        </div>
+
+        <!-- 分类标签 -->
+        <nav id="categoryTabs" class="flex flex-wrap gap-2 mb-6"></nav>
+
+        <!-- 内容区 -->
+        <main id="content"></main>
+
+        <!-- 空状态 -->
+        <div id="emptyState" class="hidden text-center py-20 text-slate-400">
+            <div class="text-5xl mb-3">📭</div>
+            <p>暂无公告数据，等待首次抓取。</p>
+        </div>
+
+        <footer class="mt-10 text-center text-xs text-slate-400">
+            数据来自各级人事考试官方网站，仅供参考。请以官网原文为准。
+        </footer>
+    </div>
+
+    <script>
+        const CATEGORIES = ["国考", "省考", "中央遴选", "各省选调"];
+        const CATEGORY_STYLE = {
+            "国考": { badge: "bg-blue-100 text-blue-700", dot: "bg-blue-500" },
+            "省考": { badge: "bg-emerald-100 text-emerald-700", dot: "bg-emerald-500" },
+            "中央遴选": { badge: "bg-purple-100 text-purple-700", dot: "bg-purple-500" },
+            "各省选调": { badge: "bg-amber-100 text-amber-700", dot: "bg-amber-500" },
+        };
+
+        let allData = [];
+        let activeCategory = "all";
+
+        const $ = (sel) => document.querySelector(sel);
+
+        function escapeHtml(s) {
+            return (s ?? "").toString()
+                .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+        }
+
+        function fmt(dateStr) {
+            return dateStr || '<span class="text-slate-300">—</span>';
+        }
+
+        async function loadData() {
+            try {
+                const res = await fetch("data.json?t=" + Date.now());
+                if (!res.ok) throw new Error("HTTP " + res.status);
+                const data = await res.json();
+                allData = data.announcements || [];
+                $("#lastUpdated").textContent = data.last_updated ? formatTime(data.last_updated) : "--";
+                $("#totalCount").textContent = allData.length;
+                $("#newCount").textContent = allData.filter(a => a.is_new).length;
+                renderTabs();
+                render();
+            } catch (e) {
+                console.error(e);
+                $("#content").innerHTML = "";
+                $("#emptyState").classList.remove("hidden");
+                $("#emptyState").innerHTML =
+                    '<div class="text-5xl mb-3">⚠️</div><p>读取 data.json 失败：' + escapeHtml(e.message) + "</p>";
+            }
+        }
+
+        function formatTime(iso) {
+            try {
+                const d = new Date(iso);
+                return d.toLocaleString("zh-CN", { hour12: false });
+            } catch {
+                return iso;
+            }
+        }
+
+        function getFiltered() {
+            const kw = $("#searchInput").value.trim().toLowerCase();
+            const onlyNew = $("#onlyNew").checked;
+            return allData.filter(a => {
+                if (onlyNew && !a.is_new) return false;
+                if (activeCategory !== "all" && a.category !== activeCategory) return false;
+                if (kw) {
+                    const hay = (a.title + " " + (a.source || "") + " " + (a.category || "")).toLowerCase();
+                    if (!hay.includes(kw)) return false;
+                }
+                return true;
+            });
+        }
+
+        function renderTabs() {
+            const tabs = $("#categoryTabs");
+            tabs.innerHTML = "";
+            const allBtn = makeTab("all", "全部", allData.length);
+            tabs.appendChild(allBtn);
+            for (const cat of CATEGORIES) {
+                const count = allData.filter(a => a.category === cat).length;
+                tabs.appendChild(makeTab(cat, cat, count));
+            }
+        }
+
+        function makeTab(cat, label, count) {
+            const btn = document.createElement("button");
+            const active = activeCategory === cat;
+            btn.className =
+                "px-4 py-1.5 rounded-full text-sm font-medium border transition " +
+                (active
+                    ? "bg-brand-600 text-white border-brand-600"
+                    : "bg-white text-slate-600 border-slate-200 hover:border-brand-500 hover:text-brand-600");
+            btn.innerHTML = `${label} <span class="ml-1 text-xs ${active ? "text-brand-100" : "text-slate-400"}">${count}</span>`;
+            btn.onclick = () => { activeCategory = cat; renderTabs(); render(); };
+            return btn;
+        }
+
+        function render() {
+            const content = $("#content");
+            const empty = $("#emptyState");
+            const items = getFiltered();
+
+            if (!items.length) {
+                content.innerHTML = "";
+                empty.classList.remove("hidden");
+                return;
+            }
+            empty.classList.add("hidden");
+
+            // 按类别分组（保持 CATEGORIES 顺序）
+            const groups = {};
+            for (const cat of CATEGORIES) groups[cat] = [];
+            for (const a of items) {
+                if (!groups[a.category]) groups[a.category] = [];
+                groups[a.category].push(a);
+            }
+
+            let html = "";
+            for (const cat of CATEGORIES) {
+                const list = groups[cat];
+                if (!list.length) continue;
+                const style = CATEGORY_STYLE[cat] || CATEGORY_STYLE["国考"];
+                html += `
+                <section class="mb-8">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block w-2.5 h-2.5 rounded-full ${style.dot}"></span>
+                        <h2 class="text-lg font-semibold text-slate-900">${escapeHtml(cat)}</h2>
+                        <span class="text-xs text-slate-400">${list.length} 条</span>
+                    </div>
+                    <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm bg-white">
+                        <table class="min-w-full text-sm">
+                            <thead>
+                                <tr class="bg-slate-50 text-slate-500 text-left">
+                                    <th class="px-3 py-2.5 font-medium w-16">状态</th>
+                                    <th class="px-3 py-2.5 font-medium">公告标题</th>
+                                    <th class="px-3 py-2.5 font-medium whitespace-nowrap">来源</th>
+                                    <th class="px-3 py-2.5 font-medium whitespace-nowrap">发布日期</th>
+                                    <th class="px-3 py-2.5 font-medium whitespace-nowrap">报名开始</th>
+                                    <th class="px-3 py-2.5 font-medium whitespace-nowrap">报名截止</th>
+                                    <th class="px-3 py-2.5 font-medium whitespace-nowrap">笔试时间</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                ${list.map(rowHtml).join("")}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>`;
+            }
+            content.innerHTML = html;
+        }
+
+        function rowHtml(a) {
+            const isNew = a.is_new;
+            const trClass = isNew ? "row-new" : "hover:bg-slate-50";
+            const status = isNew
+                ? '<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-400 text-white animate-pulse">NEW</span>'
+                : '<span class="text-slate-300 text-xs">—</span>';
+            return `
+                <tr class="${trClass} transition">
+                    <td class="px-3 py-2.5">${status}</td>
+                    <td class="px-3 py-2.5">
+                        <a href="${escapeHtml(a.url)}" target="_blank" rel="noopener noreferrer"
+                           class="font-medium text-slate-800 hover:text-brand-600 hover:underline break-all">
+                            ${escapeHtml(a.title)}
+                        </a>
+                    </td>
+                    <td class="px-3 py-2.5 text-slate-500 whitespace-nowrap">${escapeHtml(a.source)}</td>
+                    <td class="px-3 py-2.5 text-slate-500 whitespace-nowrap">${fmt(a.publish_date)}</td>
+                    <td class="px-3 py-2.5 text-slate-600 whitespace-nowrap">${fmt(a.registration_start)}</td>
+                    <td class="px-3 py-2.5 text-slate-600 whitespace-nowrap">${fmt(a.registration_end)}</td>
+                    <td class="px-3 py-2.5 font-medium text-slate-700 whitespace-nowrap">${fmt(a.exam_date)}</td>
+                </tr>`;
+        }
+
+        $("#searchInput").addEventListener("input", render);
+        $("#onlyNew").addEventListener("change", render);
+        $("#reloadBtn").addEventListener("click", loadData);
+
+        loadData();
+        // 每 10 分钟自动刷新一次（GitHub Pages 部署后可及时看到更新）
+        setInterval(loadData, 10 * 60 * 1000);
+    </script>
+</body>
+</html>

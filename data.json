@@ -1,0 +1,59 @@
+{
+  "last_updated": "2026-09-03T11:45:21",
+  "total": 4,
+  "new_count": 2,
+  "announcements": [
+    {
+      "category": "国考",
+      "source": "国家公务员局-国考专题",
+      "title": "中央机关及其直属机构2026年度考试录用公务员公告",
+      "publish_date": "2026-10-14",
+      "registration_start": "2026-10-15",
+      "registration_end": "2026-10-24",
+      "exam_date": "2026-11-30",
+      "url": "http://bm.scs.gov.cn/",
+      "id": "935ae628742fb79c",
+      "is_new": true,
+      "crawled_at": "2026-09-03T11:45:21"
+    },
+    {
+      "category": "中央遴选",
+      "source": "国家公务员局-中央机关公开遴选",
+      "title": "2026年度中央机关公开遴选和公开选调公务员公告",
+      "publish_date": "2026-01-08",
+      "registration_start": "2026-01-09",
+      "registration_end": "2026-01-15",
+      "exam_date": "2026-03-01",
+      "url": "http://sub.scs.gov.cn/",
+      "id": "df48c8b34a8e48f7",
+      "is_new": false,
+      "crawled_at": "2026-09-03T11:45:21"
+    },
+    {
+      "category": "省考",
+      "source": "广东人事考试网",
+      "title": "2026年广东省考试录用公务员公告",
+      "publish_date": "2026-01-05",
+      "registration_start": "2026-01-06",
+      "registration_end": "2026-01-12",
+      "exam_date": "2026-03-15",
+      "url": "http://rsks.gd.gov.cn/",
+      "id": "2b7a5ef2499c183f",
+      "is_new": false,
+      "crawled_at": "2026-09-03T11:45:21"
+    },
+    {
+      "category": "各省选调",
+      "source": "山东定向选调",
+      "title": "山东省2026年度定向选调应届优秀毕业生公告",
+      "publish_date": "2026-11-20",
+      "registration_start": "2026-11-21",
+      "registration_end": "2026-11-27",
+      "exam_date": "2026-12-21",
+      "url": "http://www.dtd.shandong.gov.cn/",
+      "id": "c841ab9dfe886962",
+      "is_new": true,
+      "crawled_at": "2026-09-03T11:45:21"
+    }
+  ]
+}
