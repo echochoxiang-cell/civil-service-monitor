@@ -1,33 +1,20 @@
 {
-  "last_updated": "2026-09-04T00:27:26",
-  "total": 43,
-  "new_count": 23,
+  "last_updated": "2026-09-04T08:27:21",
+  "total": 27,
+  "new_count": 0,
   "announcements": [
     {
       "category": "省考",
       "source": "上海市考",
-      "title": "上海市社会保险事业管理中心静安分中心搬迁公告",
-      "publish_date": "2026-06-23",
+      "title": "上海市公务员局",
+      "publish_date": "",
       "registration_start": "",
       "registration_end": "",
       "exam_date": "",
-      "url": "https://rsj.sh.gov.cn/tbmts_17501/20260623/92fab5af95424c9f8f40658197dc97bf.html",
-      "id": "9dcaf769ed3a9322",
-      "is_new": true,
-      "crawled_at": "2026-09-04T00:27:26"
-    },
-    {
-      "category": "省考",
-      "source": "上海市考",
-      "title": "上海市社会保险事业管理中心浦东分中心金桥分点关闭公告",
-      "publish_date": "2026-05-28",
-      "registration_start": "",
-      "registration_end": "",
-      "exam_date": "",
-      "url": "https://rsj.sh.gov.cn/tbmts_17501/20260528/74af1233fbbc4e50a5c47fb5b100accc.html",
-      "id": "bd6d9ea8301190f9",
-      "is_new": true,
-      "crawled_at": "2026-09-04T00:27:26"
+      "url": "https://rsj.sh.gov.cn/tqtxgwz_17085/20200616/t0035_1365545.html",
+      "id": "a591c1d784079a1a",
+      "is_new": false,
+      "crawled_at": "2026-09-04T08:27:21"
     },
     {
       "category": "省考",
@@ -39,59 +26,7 @@
       "exam_date": "",
       "url": "https://rsj.sh.gov.cn/tgsgg_17341/index.html",
       "id": "4a63eae9702bd690",
-      "is_new": true,
-      "crawled_at": "2026-09-04T00:27:26"
-    },
-    {
-      "category": "省考",
-      "source": "上海市考",
-      "title": "人事考试",
-      "publish_date": "2025-09-25",
-      "registration_start": "",
-      "registration_end": "",
-      "exam_date": "",
-      "url": "https://rsj.sh.gov.cn/trsks_17824/index.html",
-      "id": "87b791ef2683a5e4",
-      "is_new": true,
-      "crawled_at": "2026-09-04T00:27:26"
-    },
-    {
-      "category": "省考",
-      "source": "上海市考",
-      "title": "请问2026年二建考试成绩的公布时间？",
-      "publish_date": "2026-07-28",
-      "registration_start": "",
-      "registration_end": "",
-      "exam_date": "",
-      "url": "https://bmhd.rsj.sh.gov.cn/gzpy-interaction-front/consult/feedback/details?id=6c249604453546ecad2f7e044626416a",
-      "id": "972d1204b39698c6",
-      "is_new": true,
-      "crawled_at": "2026-09-04T00:27:26"
-    },
-    {
-      "category": "省考",
-      "source": "上海事业编",
-      "title": "上海市社会保险事业管理中心静安分中心搬迁公告",
-      "publish_date": "2026-06-23",
-      "registration_start": "",
-      "registration_end": "",
-      "exam_date": "",
-      "url": "https://rsj.sh.gov.cn/tbmts_17501/20260623/92fab5af95424c9f8f40658197dc97bf.html",
-      "id": "9dcaf769ed3a9322",
-      "is_new": true,
-      "crawled_at": "2026-09-04T00:27:26"
-    },
-    {
-      "category": "省考",
-      "source": "上海事业编",
-      "title": "上海市社会保险事业管理中心浦东分中心金桥分点关闭公告",
-      "publish_date": "2026-05-28",
-      "registration_start": "",
-      "registration_end": "",
-      "exam_date": "",
-      "url": "https://rsj.sh.gov.cn/tbmts_17501/20260528/74af1233fbbc4e50a5c47fb5b100accc.html",
-      "id": "bd6d9ea8301190f9",
-      "is_new": true,
+      "is_new": false,
       "crawled_at": "2026-09-04T00:27:26"
     },
     {
@@ -104,7 +39,7 @@
       "exam_date": "",
       "url": "https://rsj.sh.gov.cn/ttpxw_17107/20260819/t0035_1443214.html",
       "id": "6e22d4d9c9327fa1",
-      "is_new": true,
+      "is_new": false,
       "crawled_at": "2026-09-04T00:27:26"
     },
     {
@@ -117,7 +52,7 @@
       "exam_date": "",
       "url": "https://rsj.sh.gov.cn/tgsgg_17341/index.html",
       "id": "4a63eae9702bd690",
-      "is_new": true,
+      "is_new": false,
       "crawled_at": "2026-09-04T00:27:26"
     },
     {
@@ -130,20 +65,7 @@
       "exam_date": "",
       "url": "https://rsj.sh.gov.cn/tsydwgkzp_17406/index.html",
       "id": "f3f3cffaa4f0e7d1",
-      "is_new": true,
-      "crawled_at": "2026-09-04T00:27:26"
-    },
-    {
-      "category": "省考",
-      "source": "上海事业编",
-      "title": "关于征集上海市就业和社会保障“十五五”规划意见建议的公告（已截止）",
-      "publish_date": "2025-07-18",
-      "registration_start": "",
-      "registration_end": "",
-      "exam_date": "",
-      "url": "https://hd.sh.gov.cn/inter/#/survey/view?id=727fcc5e629345fb8ba8cc9b0433b289",
-      "id": "c4f606d9bc83fe18",
-      "is_new": true,
+      "is_new": false,
       "crawled_at": "2026-09-04T00:27:26"
     },
     {
@@ -156,7 +78,7 @@
       "exam_date": "",
       "url": "https://jshrss.jiangsu.gov.cn/art/2026/8/31/art_78497_11822885.html",
       "id": "592a34a56c972933",
-      "is_new": true,
+      "is_new": false,
       "crawled_at": "2026-09-04T00:27:26"
     },
     {
@@ -169,7 +91,7 @@
       "exam_date": "",
       "url": "https://jshrss.jiangsu.gov.cn/art/2026/8/26/art_77279_11820915.html",
       "id": "925b0216cd526a78",
-      "is_new": true,
+      "is_new": false,
       "crawled_at": "2026-09-04T00:27:26"
     },
     {
@@ -182,7 +104,7 @@
       "exam_date": "",
       "url": "https://jshrss.jiangsu.gov.cn/col/col91395/index.html",
       "id": "7978855bef59e717",
-      "is_new": true,
+      "is_new": false,
       "crawled_at": "2026-09-04T00:27:26"
     },
     {
@@ -195,20 +117,7 @@
       "exam_date": "",
       "url": "http://jshrss.jiangsu.gov.cn/col/col93485/index.html",
       "id": "e61eccdd88e4769b",
-      "is_new": true,
-      "crawled_at": "2026-09-04T00:27:26"
-    },
-    {
-      "category": "省考",
-      "source": "江苏事业编",
-      "title": "2026年省属事业单位招聘",
-      "publish_date": "2026-03-21",
-      "registration_start": "2026-04-15",
-      "registration_end": "",
-      "exam_date": "",
-      "url": "http://jshrss.jiangsu.gov.cn/col/col93339/index.html",
-      "id": "16a678743243918e",
-      "is_new": true,
+      "is_new": false,
       "crawled_at": "2026-09-04T00:27:26"
     },
     {
@@ -221,7 +130,7 @@
       "exam_date": "",
       "url": "http://rsj.beijing.gov.cn/bm/ztzl/2020exam/index.html",
       "id": "7687fe5d07cedec0",
-      "is_new": true,
+      "is_new": false,
       "crawled_at": "2026-09-04T00:27:26"
     },
     {
@@ -234,7 +143,7 @@
       "exam_date": "",
       "url": "http://rsj.beijing.gov.cn/xxgk/gkzp/202609/t20260903_4849038.html",
       "id": "67fc5d86ced2b314",
-      "is_new": true,
+      "is_new": false,
       "crawled_at": "2026-09-04T00:27:26"
     },
     {
@@ -247,33 +156,7 @@
       "exam_date": "",
       "url": "http://rsj.beijing.gov.cn/xxgk/gkzp/202609/t20260903_4848731.html",
       "id": "90c9474a032b5cb2",
-      "is_new": true,
-      "crawled_at": "2026-09-04T00:27:26"
-    },
-    {
-      "category": "各省选调",
-      "source": "上海定向选调",
-      "title": "上海市社会保险事业管理中心静安分中心搬迁公告",
-      "publish_date": "2026-06-23",
-      "registration_start": "",
-      "registration_end": "",
-      "exam_date": "",
-      "url": "https://rsj.sh.gov.cn/tbmts_17501/20260623/92fab5af95424c9f8f40658197dc97bf.html",
-      "id": "9dcaf769ed3a9322",
-      "is_new": true,
-      "crawled_at": "2026-09-04T00:27:26"
-    },
-    {
-      "category": "各省选调",
-      "source": "上海定向选调",
-      "title": "上海市社会保险事业管理中心浦东分中心金桥分点关闭公告",
-      "publish_date": "2026-05-28",
-      "registration_start": "",
-      "registration_end": "",
-      "exam_date": "",
-      "url": "https://rsj.sh.gov.cn/tbmts_17501/20260528/74af1233fbbc4e50a5c47fb5b100accc.html",
-      "id": "bd6d9ea8301190f9",
-      "is_new": true,
+      "is_new": false,
       "crawled_at": "2026-09-04T00:27:26"
     },
     {
@@ -286,20 +169,7 @@
       "exam_date": "",
       "url": "https://rsj.sh.gov.cn/tgsgg_17341/index.html",
       "id": "4a63eae9702bd690",
-      "is_new": true,
-      "crawled_at": "2026-09-04T00:27:26"
-    },
-    {
-      "category": "各省选调",
-      "source": "上海定向选调",
-      "title": "关于征集上海市就业和社会保障“十五五”规划意见建议的公告（已截止）",
-      "publish_date": "2025-07-18",
-      "registration_start": "",
-      "registration_end": "",
-      "exam_date": "",
-      "url": "https://hd.sh.gov.cn/inter/#/survey/view?id=727fcc5e629345fb8ba8cc9b0433b289",
-      "id": "c4f606d9bc83fe18",
-      "is_new": true,
+      "is_new": false,
       "crawled_at": "2026-09-04T00:27:26"
     },
     {
@@ -325,19 +195,6 @@
       "exam_date": "",
       "url": "https://jshrss.jiangsu.gov.cn/art/2026/8/14/art_77278_11817590.html",
       "id": "da086fbe4255a64f",
-      "is_new": false,
-      "crawled_at": "2026-09-03T05:08:16"
-    },
-    {
-      "category": "省考",
-      "source": "江苏人事考试",
-      "title": "江苏省2026年度考试录用公务员专题",
-      "publish_date": "2025-11-04",
-      "registration_start": "",
-      "registration_end": "2025-12-03",
-      "exam_date": "2025-12-06",
-      "url": "https://jshrss.jiangsu.gov.cn/col/col92911/index.html",
-      "id": "44793ef82f818538",
       "is_new": false,
       "crawled_at": "2026-09-03T05:08:16"
     },
@@ -407,32 +264,6 @@
       "crawled_at": "2026-09-03T05:08:16"
     },
     {
-      "category": "省考",
-      "source": "河南人事考试",
-      "title": "2026全省人事考试工作座谈会顺利召开",
-      "publish_date": "2026-07-27",
-      "registration_start": "",
-      "registration_end": "",
-      "exam_date": "",
-      "url": "http://www.hnrsks.com/sitesources/hnsrskszx/page_pc/xwdt/article180b1c470d894030a90591a721a1b6df.html",
-      "id": "168a68bbdacd1111",
-      "is_new": false,
-      "crawled_at": "2026-09-03T05:08:16"
-    },
-    {
-      "category": "省考",
-      "source": "河南人事考试",
-      "title": "守护成长路 文明共起步 河南省人事考试...",
-      "publish_date": "2026-06-26",
-      "registration_start": "",
-      "registration_end": "",
-      "exam_date": "",
-      "url": "http://www.hnrsks.com/sitesources/hnsrskszx/page_pc/xwdt/article57d8d5890f9a47f9815598ec2d14fee7.html",
-      "id": "37c3860709a7e5ac",
-      "is_new": false,
-      "crawled_at": "2026-09-03T05:08:16"
-    },
-    {
       "category": "各省选调",
       "source": "北京人社-选调生",
       "title": "公示公告",
@@ -442,19 +273,6 @@
       "exam_date": "",
       "url": "http://rsj.beijing.gov.cn/xxgk/tzgg/",
       "id": "b31707d846f98e8c",
-      "is_new": false,
-      "crawled_at": "2026-09-03T05:08:16"
-    },
-    {
-      "category": "各省选调",
-      "source": "北京人社-选调生",
-      "title": "关于2026年“数据要素×”大赛新增人力资源赛道的公告",
-      "publish_date": "2026-07-23",
-      "registration_start": "",
-      "registration_end": "",
-      "exam_date": "",
-      "url": "http://rsj.beijing.gov.cn/xxgk/tzgg/202607/t20260723_4781092.html",
-      "id": "af19c7f566461a51",
       "is_new": false,
       "crawled_at": "2026-09-03T05:08:16"
     },
@@ -520,32 +338,6 @@
       "exam_date": "2026-11-30",
       "url": "http://bm.scs.gov.cn/",
       "id": "935ae628742fb79c",
-      "is_new": false,
-      "crawled_at": "2026-09-03T11:45:21"
-    },
-    {
-      "category": "中央遴选",
-      "source": "国家公务员局-中央机关公开遴选",
-      "title": "2026年度中央机关公开遴选和公开选调公务员公告",
-      "publish_date": "2026-01-08",
-      "registration_start": "2026-01-09",
-      "registration_end": "2026-01-15",
-      "exam_date": "2026-03-01",
-      "url": "http://sub.scs.gov.cn/",
-      "id": "df48c8b34a8e48f7",
-      "is_new": false,
-      "crawled_at": "2026-09-03T11:45:21"
-    },
-    {
-      "category": "省考",
-      "source": "广东人事考试网",
-      "title": "2026年广东省考试录用公务员公告",
-      "publish_date": "2026-01-05",
-      "registration_start": "2026-01-06",
-      "registration_end": "2026-01-12",
-      "exam_date": "2026-03-15",
-      "url": "http://rsks.gd.gov.cn/",
-      "id": "2b7a5ef2499c183f",
       "is_new": false,
       "crawled_at": "2026-09-03T11:45:21"
     },
