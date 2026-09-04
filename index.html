@@ -86,6 +86,30 @@
 
         const $ = (sel) => document.querySelector(sel);
 
+        // 发布日期下限：早于此日期的条目不展示（与爬虫侧 MIN_PUBLISH_DATE 保持一致，前端兜底）
+        const MIN_PUBLISH_DATE = "2026-08-01";
+        // 查看状态持久化：以公告 id 为 key 存 localStorage
+        const VIEW_KEY = "csm:viewstate";
+
+        function loadViewState() {
+            try { return JSON.parse(localStorage.getItem(VIEW_KEY) || "{}"); }
+            catch { return {}; }
+        }
+        function saveViewState(state) {
+            try { localStorage.setItem(VIEW_KEY, JSON.stringify(state)); }
+            catch (e) { console.warn("localStorage 写入失败", e); }
+        }
+        function markViewed(id) {
+            const s = loadViewState();
+            if (!s[id]) {
+                s[id] = { viewed: true };
+                saveViewState(s);
+            }
+        }
+        function isViewed(id) {
+            return !!(loadViewState()[id] || {}).viewed;
+        }
+
         function escapeHtml(s) {
             return (s ?? "").toString()
                 .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
@@ -129,6 +153,8 @@
             const kw = $("#searchInput").value.trim().toLowerCase();
             const onlyNew = $("#onlyNew").checked;
             return allData.filter(a => {
+                // 前端兜底：发布日期 < MIN_PUBLISH_DATE 的不展示
+                if (a.publish_date && a.publish_date < MIN_PUBLISH_DATE) return false;
                 if (onlyNew && !a.is_new) return false;
                 if (activeCategory !== "all" && a.category !== activeCategory) return false;
                 if (kw) {
@@ -206,6 +232,7 @@
                                     <th class="px-3 py-2.5 font-medium whitespace-nowrap">报名开始</th>
                                     <th class="px-3 py-2.5 font-medium whitespace-nowrap">报名截止</th>
                                     <th class="px-3 py-2.5 font-medium whitespace-nowrap">笔试时间</th>
+                                    <th class="px-3 py-2.5 font-medium whitespace-nowrap">查看情况</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-slate-100">
@@ -220,15 +247,21 @@
 
         function rowHtml(a) {
             const isNew = a.is_new;
+            const viewed = isViewed(a.id);
             const trClass = isNew ? "row-new" : "hover:bg-slate-50";
             const status = isNew
                 ? '<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-400 text-white animate-pulse">NEW</span>'
                 : '<span class="text-slate-300 text-xs">—</span>';
+            const viewBadge = viewed
+                ? '<span class="text-xs font-medium text-emerald-600">✓ 已查看</span>'
+                : '<span class="text-xs text-slate-400">未查看</span>';
+            // data-id 用于点击时取到 id；用 onclick 内联调用全局 markViewed
             return `
-                <tr class="${trClass} transition">
+                <tr class="${trClass} transition" data-id="${escapeHtml(a.id)}">
                     <td class="px-3 py-2.5">${status}</td>
                     <td class="px-3 py-2.5">
                         <a href="${escapeHtml(a.url)}" target="_blank" rel="noopener noreferrer"
+                           onclick="markViewed('${escapeHtml(a.id)}'); refreshViewCol('${escapeHtml(a.id)}');"
                            class="font-medium text-slate-800 hover:text-brand-600 hover:underline break-all">
                             ${escapeHtml(a.title)}
                         </a>
@@ -238,7 +271,15 @@
                     <td class="px-3 py-2.5 text-slate-600 whitespace-nowrap">${fmt(a.registration_start)}</td>
                     <td class="px-3 py-2.5 text-slate-600 whitespace-nowrap">${fmt(a.registration_end)}</td>
                     <td class="px-3 py-2.5 font-medium text-slate-700 whitespace-nowrap">${fmt(a.exam_date)}</td>
+                    <td class="px-3 py-2.5 whitespace-nowrap" data-viewcol="${escapeHtml(a.id)}">${viewBadge}</td>
                 </tr>`;
+        }
+
+        // 点击公告后，局部刷新该行的"查看情况"列，无需重渲染整张表
+        function refreshViewCol(id) {
+            const col = document.querySelector(`td[data-viewcol="${id}"]`);
+            if (!col) return;
+            col.innerHTML = '<span class="text-xs font-medium text-emerald-600">✓ 已查看</span>';
         }
 
         $("#searchInput").addEventListener("input", render);
