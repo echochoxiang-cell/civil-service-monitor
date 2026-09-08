@@ -1,8 +1,21 @@
 {
-  "last_updated": "2026-09-07T00:28:24",
-  "total": 27,
-  "new_count": 0,
+  "last_updated": "2026-09-08T00:28:54",
+  "total": 28,
+  "new_count": 1,
   "announcements": [
+    {
+      "category": "省考",
+      "source": "江苏事业编",
+      "title": "省领导出席全省安全生产领域专场招聘会2026-09-07",
+      "publish_date": "2026-09-07",
+      "registration_start": "",
+      "registration_end": "",
+      "exam_date": "",
+      "url": "https://mp.weixin.qq.com/s/GaUHoEdkR_rzc3gGbZ_YRw",
+      "id": "95f4d332f801a89e",
+      "is_new": true,
+      "crawled_at": "2026-09-08T00:28:54"
+    },
     {
       "category": "省考",
       "source": "上海市考",
