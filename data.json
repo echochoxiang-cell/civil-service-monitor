@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-09-08T00:28:54",
+  "last_updated": "2026-09-09T00:28:43",
   "total": 28,
-  "new_count": 1,
+  "new_count": 0,
   "announcements": [
     {
       "category": "省考",
@@ -13,7 +13,7 @@
       "exam_date": "",
       "url": "https://mp.weixin.qq.com/s/GaUHoEdkR_rzc3gGbZ_YRw",
       "id": "95f4d332f801a89e",
-      "is_new": true,
+      "is_new": false,
       "crawled_at": "2026-09-08T00:28:54"
     },
     {
