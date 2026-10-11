@@ -1,8 +1,21 @@
 {
-  "last_updated": "2026-10-10T04:44:29",
-  "total": 28,
-  "new_count": 0,
+  "last_updated": "2026-10-11T04:28:34",
+  "total": 29,
+  "new_count": 1,
   "announcements": [
+    {
+      "category": "省考",
+      "source": "上海事业编",
+      "title": "从“技能加油站”到“招聘面试台”，闵行的这场家...",
+      "publish_date": "2026-10-10",
+      "registration_start": "",
+      "registration_end": "",
+      "exam_date": "",
+      "url": "https://rsj.sh.gov.cn/ttpxw_17107/20261010/t0035_1444102.html",
+      "id": "ef20d5f57f2bcb73",
+      "is_new": true,
+      "crawled_at": "2026-10-11T04:28:34"
+    },
     {
       "category": "省考",
       "source": "江苏事业编",
