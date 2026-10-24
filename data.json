@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-10-23T03:45:06",
+  "last_updated": "2026-10-24T03:39:02",
   "total": 30,
-  "new_count": 1,
+  "new_count": 0,
   "announcements": [
     {
       "category": "省考",
@@ -13,7 +13,7 @@
       "exam_date": "",
       "url": "https://rsj.sh.gov.cn/ttpxw_17107/20261022/t0035_1444298.html",
       "id": "ac41abf0e53c0323",
-      "is_new": true,
+      "is_new": false,
       "crawled_at": "2026-10-23T03:45:06"
     },
     {
