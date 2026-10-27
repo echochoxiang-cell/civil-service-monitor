@@ -1,8 +1,34 @@
 {
-  "last_updated": "2026-10-26T03:37:27",
-  "total": 30,
-  "new_count": 0,
+  "last_updated": "2026-10-27T04:03:32",
+  "total": 32,
+  "new_count": 2,
   "announcements": [
+    {
+      "category": "省考",
+      "source": "上海事业编",
+      "title": "“乐业上海优+”——2026年全国城市联合招聘高校毕...",
+      "publish_date": "2026-10-26",
+      "registration_start": "",
+      "registration_end": "",
+      "exam_date": "",
+      "url": "https://rsj.sh.gov.cn/ttpxw_17107/20261027/t0035_1444347.html",
+      "id": "fd47d4008e52a8b5",
+      "is_new": true,
+      "crawled_at": "2026-10-27T04:03:32"
+    },
+    {
+      "category": "省考",
+      "source": "上海事业编",
+      "title": "崇明金秋招聘会开进商圈，岗位服务“一站式”送到...",
+      "publish_date": "2026-10-26",
+      "registration_start": "",
+      "registration_end": "",
+      "exam_date": "",
+      "url": "https://rsj.sh.gov.cn/ttpxw_17107/20261027/t0035_1444349.html",
+      "id": "5be75df7ad4468d5",
+      "is_new": true,
+      "crawled_at": "2026-10-27T04:03:32"
+    },
     {
       "category": "省考",
       "source": "上海事业编",
