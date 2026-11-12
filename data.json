@@ -1,8 +1,21 @@
 {
-  "last_updated": "2026-11-11T05:04:45",
-  "total": 33,
-  "new_count": 0,
+  "last_updated": "2026-11-12T06:06:55",
+  "total": 34,
+  "new_count": 1,
   "announcements": [
+    {
+      "category": "省考",
+      "source": "上海事业编",
+      "title": "把“窗口”搬到“招聘会”，黄浦区把“员工录用一...",
+      "publish_date": "2026-11-11",
+      "registration_start": "",
+      "registration_end": "",
+      "exam_date": "",
+      "url": "https://rsj.sh.gov.cn/ttpxw_17107/20261111/t0035_1444618.html",
+      "id": "05ff92fca325a2f1",
+      "is_new": true,
+      "crawled_at": "2026-11-12T06:06:55"
+    },
     {
       "category": "省考",
       "source": "上海事业编",
